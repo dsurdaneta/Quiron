@@ -3,7 +3,7 @@
   <Class Name="Quiron_Medical.Models.Geography.City" Collapsed="true">
     <Position X="5.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAgEAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAgEAAAAAAAAQAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Models\Q\Geography\City.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -16,7 +16,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAgAAAAAAAAAQAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAAAAAAAAAgAAAAAAAAAQAAAAQAAAAABAAAAAAAAA=</HashCode>
       <FileName>Models\Q\Geography\State.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -56,12 +56,12 @@
       <Property Name="MainCity" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
-      <Property Name="Specialties" />
       <Property Name="ConsultingRooms" />
+      <Property Name="Specialties" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Quiron_Medical.Models.Specialty" Collapsed="true">
-    <Position X="0.5" Y="3" Width="1.5" />
+    <Position X="0.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAggAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Q\Specialty.cs</FileName>
@@ -70,7 +70,7 @@
   <Class Name="Quiron_Medical.Models.ConsultingRoom" Collapsed="true">
     <Position X="3" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgggAAAEBAAAAAAAAAAAACAACAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgggAAAEBAAAAAAAAAAAACAACAAAABAAA=</HashCode>
       <FileName>Models\Q\ConsultingRoom.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -80,7 +80,7 @@
   <Class Name="Quiron_Medical.Models.MedicalCentre" Collapsed="true">
     <Position X="5.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAgiAIIAAAAAQAAAAAAAACAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAgiAIICAAAAQBAAAAAAACAQAAAAAAAAA=</HashCode>
       <FileName>Models\Q\MedicalCentre.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -111,6 +111,16 @@
       <HashCode>AAAAAAAAAAAggAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Q\Users\UserRole.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Quiron_Medical.Models.DoctorSpecialty" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAIAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Q\DoctorSpecialty.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Specialties" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Quiron_Medical.Models.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace Quiron_Medical.Models
 {
     public class MedicalCentre
     {
+        #region Properties
         public long ID { get; set; }
         [Display(Name="Nombre")]
         public String Name { get; set; }
@@ -27,7 +29,35 @@ namespace Quiron_Medical.Models
         public virtual Geography.City City { get; set; }
         [Display(Name = "Tipo")]
         public virtual MedicalCentreType Type { get; set; }
+        #endregion
 
-        
+        #region Construction
+        public MedicalCentre() { }
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="typeID"></param>
+        /// <returns></returns>
+        public List<MedicalCentre> GetCentresByType(long typeID)
+        {
+            QuironContext context = new QuironContext();
+            return context.MedicalCentres.Where(x => x.MedicalCentreTypeID == typeID).ToList();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cityID"></param>
+        /// <returns></returns>
+        public List<MedicalCentre> GetCentresByCity(long cityID)
+        {
+            QuironContext context = new QuironContext();
+            return context.MedicalCentres.Where(x => x.CityID == cityID).ToList();
+        }
+        #endregion
+
     }
 }

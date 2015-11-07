@@ -8,9 +8,10 @@ namespace Quiron_Medical.Models.Geography
 {
     public class Country
     {
+        #region Properties
         public long ID { get; set; }
         [Required()]
-        [Display(Name="Nombre")]
+        [Display(Name="Pais")]
         public String Name { get; set; }
         [StringLength(5)]
         [Display(Name = "Código Telefónico")]
@@ -19,5 +20,13 @@ namespace Quiron_Medical.Models.Geography
         public String Abbreviation { get; set; }
 
         public virtual List<State> States { get; set; }
+        #endregion
+
+        #region Construction
+        public Country() { }
+        #endregion
+
+        #region Methods
+        #endregion
     }
 }

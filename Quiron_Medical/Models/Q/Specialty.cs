@@ -8,12 +8,21 @@ namespace Quiron_Medical.Models
 {
     public class Specialty
     {
+        #region Properties
         public long ID { get; set; }
         [StringLength(100)]
         [Required()]
-        [Display(Name = "Nombre")]
+        [Display(Name = "Especialización")]
         public String Name { get; set; }
         [Display(Name = "Descripción")]
         public String Description { get; set; }
+        #endregion
+
+        #region Construction
+        public Specialty() { }
+        #endregion
+
+        #region Methods
+        #endregion
     }
 }

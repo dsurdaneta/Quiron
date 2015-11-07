@@ -22,6 +22,7 @@ namespace Quiron_Medical.Models.DAL
 
         public DbSet<Specialty> Specialties { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<DoctorSpecialty> DoctorSpecialties { get; set; }
 
         public DbSet<ConsultingRoom> ConsultingRooms { get; set; }
         public DbSet<MedicalCentre> MedicalCentres { get; set; }

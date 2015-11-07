@@ -179,6 +179,7 @@
     <Compile Include="Models\Q\DAL\QuironContext.cs" />
     <Compile Include="Models\Q\DAL\QuironContextInitializer.cs" />
     <Compile Include="Models\Q\Doctor.cs" />
+    <Compile Include="Models\Q\DoctorSpecialty.cs" />
     <Compile Include="Models\Q\Geography\City.cs" />
     <Compile Include="Models\Q\Geography\Country.cs" />
     <Compile Include="Models\Q\Geography\State.cs" />
@@ -284,6 +285,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\Q\DTO\" />
     <Folder Include="Models\Q\System\" />
   </ItemGroup>
   <ItemGroup>

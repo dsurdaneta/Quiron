@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Quiron_Medical.Controllers.Q
+namespace Quiron_Medical.Controllers
 {
     public class CitiesController : Controller
     {

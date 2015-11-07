@@ -18,7 +18,7 @@ namespace Quiron_Medical.Models
         public String Email { get; set; }
         public long MainCityID { get; set; }
 
-        public virtual List<Specialty> Specialties { get; set; }
+        public virtual List<DoctorSpecialty> Specialties { get; set; }
         public virtual Geography.City MainCity { get; set; }
         public virtual List<ConsultingRoom> ConsultingRooms { get; set; }
 
