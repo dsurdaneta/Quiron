@@ -1,2 +1,6 @@
 # Quiron
-Doctor search and recommendation Proyect/ Proyecto de busqueda y recomendacion de Medicos
+[EN]
+Doctor search and recommendation Project 
+
+[SP]
+Proyecto de busqueda y recomendacion de Médicos

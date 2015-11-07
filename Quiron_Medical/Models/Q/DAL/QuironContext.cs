@@ -21,15 +21,15 @@ namespace Quiron_Medical.Models.DAL
         public DbSet<Country> Countries { get; set; }
 
         public DbSet<Specialty> Specialties { get; set; }
-        //public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }
 
-        //public DbSet<ConsultingRoom> ConsultingRooms { get; set; }
-        //public DbSet<MedicalCentre> MedicalCentres { get; set; }
+        public DbSet<ConsultingRoom> ConsultingRooms { get; set; }
+        public DbSet<MedicalCentre> MedicalCentres { get; set; }
         public DbSet<MedicalCentreType> MedicalCentreTypes { get; set; }
 
         /*Usuarios*/
-        //public DbSet<User> Users { get; set; }
-        //public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

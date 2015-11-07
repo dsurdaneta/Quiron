@@ -24,10 +24,10 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Quiron_Medical.Models.Geography.Country" Collapsed="true">
-    <Position X="10.5" Y="0.75" Width="1.5" />
+    <Position X="10.25" Y="0.75" Width="1.5" />
     <AssociationLine Name="States" Type="Quiron_Medical.Models.Geography.State" FixedToPoint="true">
       <Path>
-        <Point X="10.5" Y="1.188" />
+        <Point X="10.25" Y="1.188" />
         <Point X="9.5" Y="1.188" />
       </Path>
     </AssociationLine>
@@ -80,12 +80,12 @@
   <Class Name="Quiron_Medical.Models.MedicalCentre" Collapsed="true">
     <Position X="5.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAggAIIAAAAAQAAAAAAAACAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAgiAIIAAAAAQAAAAAAAACAQAAAAAAAAA=</HashCode>
       <FileName>Models\Q\MedicalCentre.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Type" />
       <Property Name="City" />
+      <Property Name="Type" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Quiron_Medical.Models.MedicalCentreType" Collapsed="true">

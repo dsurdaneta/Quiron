@@ -165,6 +165,7 @@
     <Compile Include="Controllers\Q\CountriesController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\Q\MedicalCentresController.cs" />
     <Compile Include="Controllers\Q\MedicalCentreTypesController.cs" />
     <Compile Include="Controllers\Q\SpecialtiesController.cs" />
     <Compile Include="Controllers\Q\StatesController.cs" />
@@ -275,6 +276,11 @@
     <Content Include="Views\Cities\_GetForState.cshtml" />
     <Content Include="Views\States\Details.cshtml" />
     <Content Include="Views\Cities\Details.cshtml" />
+    <Content Include="Views\MedicalCentres\Create.cshtml" />
+    <Content Include="Views\MedicalCentres\Delete.cshtml" />
+    <Content Include="Views\MedicalCentres\Details.cshtml" />
+    <Content Include="Views\MedicalCentres\Edit.cshtml" />
+    <Content Include="Views\MedicalCentres\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

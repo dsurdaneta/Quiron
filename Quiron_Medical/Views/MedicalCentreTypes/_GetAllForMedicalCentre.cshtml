@@ -1,0 +1,4 @@
+﻿@model IEnumerable<Quiron_Medical.Models.MedicalCentreType>
+
+@Html.DropDownListFor(x => x.AsEnumerable(), new SelectList(Model.AsEnumerable(),"ID","Name"))
+

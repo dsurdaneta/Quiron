@@ -128,24 +128,40 @@ namespace Quiron_Medical.Models.DAL
             });
             context.SaveChanges();
 
-            //var roles = new List<UserRole> 
-            //{
-            //    new UserRole{ Name="admin", Description="Administrador del Sistema" },
-            //    new UserRole{ Name="user", Description="Usuario Básico" },
-            //    new UserRole{ Name="doctor", Description="Médico" },
-            //    new UserRole{ Name="medical_centre", Description="Centro Médico" }
+            var roles = new List<UserRole> 
+            {
+                new UserRole{ Name="admin", Description="Administrador del Sistema" },
+                new UserRole{ Name="user", Description="Usuario Básico" },
+                new UserRole{ Name="doctor", Description="Médico" },
+                new UserRole{ Name="medical_centre", Description="Centro Médico" }
                 
-            //};
-            //roles.ForEach(r => context.UserRoles.Add(r));
+            };
+            roles.ForEach(r => context.UserRoles.Add(r));
+            context.SaveChanges();
 
-            //context.Users.Add(new User 
-            //{
-            //    UserRoleID = 1,
-            //    Code="admin",
-            //    Password="admin",
-            //    FullName="Administrador del Sistema Quirón",
-            //    CityID = 1
-            //});
+            context.Users.Add(new User
+            {
+                UserRoleID = 1,
+                Code = "admin",
+                Password = "admin",
+                FullName = "Administrador del Sistema Quirón",
+                CityID = 1,
+                BirthDate = DateTime.Now.AddYears(-25),
+                Email = "admin@quiron.test",
+                Age = 25
+            });
+            context.SaveChanges();
+
+            context.MedicalCentres.Add(new MedicalCentre 
+            {
+                CityID = 1,
+                Address = "Calle falsa 123",
+                Name = "Hospital de Prueba",
+                MainPhoneNumber = "+58-241-2213574",
+                MedicalCentreTypeID = 1,
+                PostalCode = "2001"                
+            });
+            context.SaveChanges();
             //base.Seed(context);
         }
     }

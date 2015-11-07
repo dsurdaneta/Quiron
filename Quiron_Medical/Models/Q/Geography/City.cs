@@ -9,7 +9,7 @@ namespace Quiron_Medical.Models.Geography
     public class City
     {
         public long ID { get; set; }
-        [Display(Name="Nombre")]
+        [Display(Name = "Ciudad")]
         public String Name { get; set; }
         [StringLength(5)]
         [Display(Name = "Código Telefónico")]

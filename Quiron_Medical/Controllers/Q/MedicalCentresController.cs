@@ -11,107 +11,116 @@ using Quiron_Medical.Models.DAL;
 
 namespace Quiron_Medical.Controllers
 {
-    public class MedicalCentreTypesController : Controller
+    public class MedicalCentresController : Controller
     {
         private QuironContext db = new QuironContext();
 
-        // GET: MedicalCentreTypes
+        // GET: MedicalCentres
         public ActionResult Index()
         {
-            return View(db.MedicalCentreTypes.ToList());
+            var medicalCentres = db.MedicalCentres.Include(m => m.City).Include(m => m.Type);
+            return View(medicalCentres.ToList());
         }
 
-        // GET: MedicalCentreTypes/Details/5
+        // GET: MedicalCentres/Details/5
         public ActionResult Details(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MedicalCentreType medicalCentreType = db.MedicalCentreTypes.Find(id);
-            if (medicalCentreType == null)
+            MedicalCentre medicalCentre = db.MedicalCentres.Find(id);
+            if (medicalCentre == null)
             {
                 return HttpNotFound();
             }
-            return View(medicalCentreType);
+            return View(medicalCentre);
         }
 
-        // GET: MedicalCentreTypes/Create
+        // GET: MedicalCentres/Create
         public ActionResult Create()
         {
+            ViewBag.CityID = new SelectList(db.Cities, "ID", "Name");
+            ViewBag.MedicalCentreTypeID = new SelectList(db.MedicalCentreTypes, "ID", "Name");
             return View();
         }
 
-        // POST: MedicalCentreTypes/Create
+        // POST: MedicalCentres/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Description")] MedicalCentreType medicalCentreType)
+        public ActionResult Create([Bind(Include = "ID,Name,Address,MainPhoneNumber,PostalCode,CityID,MedicalCentreTypeID")] MedicalCentre medicalCentre)
         {
             if (ModelState.IsValid)
             {
-                db.MedicalCentreTypes.Add(medicalCentreType);
+                db.MedicalCentres.Add(medicalCentre);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(medicalCentreType);
+            ViewBag.CityID = new SelectList(db.Cities, "ID", "Name", medicalCentre.CityID);
+            ViewBag.MedicalCentreTypeID = new SelectList(db.MedicalCentreTypes, "ID", "Name", medicalCentre.MedicalCentreTypeID);
+            return View(medicalCentre);
         }
 
-        // GET: MedicalCentreTypes/Edit/5
+        // GET: MedicalCentres/Edit/5
         public ActionResult Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MedicalCentreType medicalCentreType = db.MedicalCentreTypes.Find(id);
-            if (medicalCentreType == null)
+            MedicalCentre medicalCentre = db.MedicalCentres.Find(id);
+            if (medicalCentre == null)
             {
                 return HttpNotFound();
             }
-            return View(medicalCentreType);
+            ViewBag.CityID = new SelectList(db.Cities, "ID", "Name", medicalCentre.CityID);
+            ViewBag.MedicalCentreTypeID = new SelectList(db.MedicalCentreTypes, "ID", "Name", medicalCentre.MedicalCentreTypeID);
+            return View(medicalCentre);
         }
 
-        // POST: MedicalCentreTypes/Edit/5
+        // POST: MedicalCentres/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Description")] MedicalCentreType medicalCentreType)
+        public ActionResult Edit([Bind(Include = "ID,Name,Address,MainPhoneNumber,PostalCode,CityID,MedicalCentreTypeID")] MedicalCentre medicalCentre)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(medicalCentreType).State = EntityState.Modified;
+                db.Entry(medicalCentre).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(medicalCentreType);
+            ViewBag.CityID = new SelectList(db.Cities, "ID", "Name", medicalCentre.CityID);
+            ViewBag.MedicalCentreTypeID = new SelectList(db.MedicalCentreTypes, "ID", "Name", medicalCentre.MedicalCentreTypeID);
+            return View(medicalCentre);
         }
 
-        // GET: MedicalCentreTypes/Delete/5
+        // GET: MedicalCentres/Delete/5
         public ActionResult Delete(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MedicalCentreType medicalCentreType = db.MedicalCentreTypes.Find(id);
-            if (medicalCentreType == null)
+            MedicalCentre medicalCentre = db.MedicalCentres.Find(id);
+            if (medicalCentre == null)
             {
                 return HttpNotFound();
             }
-            return View(medicalCentreType);
+            return View(medicalCentre);
         }
 
-        // POST: MedicalCentreTypes/Delete/5
+        // POST: MedicalCentres/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            MedicalCentreType medicalCentreType = db.MedicalCentreTypes.Find(id);
-            db.MedicalCentreTypes.Remove(medicalCentreType);
+            MedicalCentre medicalCentre = db.MedicalCentres.Find(id);
+            db.MedicalCentres.Remove(medicalCentre);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -124,14 +133,5 @@ namespace Quiron_Medical.Controllers
             }
             base.Dispose(disposing);
         }
-
-        /*Partials*/
-        // GET: MedicalCentreTypes
-        //[ChildActionOnly()]
-        //public PartialViewResult _GetAllForMedicalCentre()
-        //{
-        //    List<MedicalCentreType> types = db.MedicalCentreTypes.ToList();
-        //    return PartialView(types);
-        //}
     }
 }
