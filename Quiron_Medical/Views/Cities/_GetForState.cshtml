@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Quiron_Medical.Models.Geography.City>
+<ul>
+    <li>
+        <h4>Ciudades:</h4>
+        <p>
+            @Html.ActionLink("Nuevo", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneCode)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.StateID)
+                    </th>*@
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneCode)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.StateID)
+                        </td>*@
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Detalles", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </li>
+</ul>

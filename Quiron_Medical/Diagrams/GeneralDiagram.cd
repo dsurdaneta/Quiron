@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Quiron_Medical.Models.Geography.City" Collapsed="true">
+    <Position X="5.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAgEAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Q\Geography\City.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Quiron_Medical.Models.Geography.State" Collapsed="true">
+    <Position X="8" Y="0.75" Width="1.5" />
+    <AssociationLine Name="Cities" Type="Quiron_Medical.Models.Geography.City" FixedFromPoint="true">
+      <Path>
+        <Point X="8" Y="1.188" />
+        <Point X="7.25" Y="1.188" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAgAAAAAAAAAQAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Q\Geography\State.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Cities" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Quiron_Medical.Models.Geography.Country" Collapsed="true">
+    <Position X="10.5" Y="0.75" Width="1.5" />
+    <AssociationLine Name="States" Type="Quiron_Medical.Models.Geography.State" FixedToPoint="true">
+      <Path>
+        <Point X="10.5" Y="1.188" />
+        <Point X="9.5" Y="1.188" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAQAAgAAAAAAAAAQAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Models\Q\Geography\Country.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="States" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Quiron_Medical.Models.Doctor" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <AssociationLine Name="MainCity" Type="Quiron_Medical.Models.Geography.City" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.312" Y="1.25" />
+        <Point X="1.312" Y="1.062" />
+        <Point X="5.75" Y="1.062" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQCAAgoAAAQAQIAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Q\Doctor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MainCity" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Specialties" />
+      <Property Name="ConsultingRooms" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Quiron_Medical.Models.Specialty" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAggAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Q\Specialty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Quiron_Medical.Models.ConsultingRoom" Collapsed="true">
+    <Position X="3" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgggAAAEBAAAAAAAAAAAACAACAAAAAAAA=</HashCode>
+      <FileName>Models\Q\ConsultingRoom.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MedicalCentre" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Quiron_Medical.Models.MedicalCentre" Collapsed="true">
+    <Position X="5.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAggAIIAAAAAQAAAAAAAACAQAAAAAAAAA=</HashCode>
+      <FileName>Models\Q\MedicalCentre.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+      <Property Name="City" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Quiron_Medical.Models.MedicalCentreType" Collapsed="true">
+    <Position X="8" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAggAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Q\MedicalCentreType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Quiron_Medical.Models.Users.User" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABACAAgIAIEEAgAAQAAAAAAAACAAACAAAAAAA=</HashCode>
+      <FileName>Models\Q\Users\User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Role" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Quiron_Medical.Models.Users.UserRole" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAggAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Q\Users\UserRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
