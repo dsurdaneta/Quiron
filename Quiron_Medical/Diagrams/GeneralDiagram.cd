@@ -49,7 +49,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQCAAgoAAAQAQIAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAQCAAgoAAAQAQAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Q\Doctor.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -57,7 +57,6 @@
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="ConsultingRooms" />
-      <Property Name="Specialties" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Quiron_Medical.Models.Specialty" Collapsed="true">
@@ -115,11 +114,12 @@
   <Class Name="Quiron_Medical.Models.DoctorSpecialty" Collapsed="true">
     <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAAAAAAIAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAIAAAAAAAABAAAgAAAAAAAAA=</HashCode>
       <FileName>Models\Q\DoctorSpecialty.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Specialties" />
+      <Property Name="Doctors" />
     </ShowAsCollectionAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />

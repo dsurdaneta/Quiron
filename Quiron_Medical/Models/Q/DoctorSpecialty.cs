@@ -13,7 +13,7 @@ namespace Quiron_Medical.Models
 
         //public Doctor Doctor { get; set; }
         //public Specialty Specialty { get; set; }
-        //public virtual List<Doctor> Doctors { get; set; }
+        public virtual List<Doctor> Doctors { get; set; }
         public virtual List<Specialty> Specialties { get; set; }
         #endregion
 
