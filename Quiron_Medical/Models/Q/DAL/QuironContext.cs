@@ -22,8 +22,7 @@ namespace Quiron_Medical.Models.DAL
 
         public DbSet<Specialty> Specialties { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
-        //public DbSet<DoctorSpecialty> DoctorSpecialties { get; set; }
-
+        
         public DbSet<ConsultingRoom> ConsultingRooms { get; set; }
         public DbSet<MedicalCentre> MedicalCentres { get; set; }
         public DbSet<MedicalCentreType> MedicalCentreTypes { get; set; }
@@ -32,10 +31,34 @@ namespace Quiron_Medical.Models.DAL
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
 
+        public DbSet<UserRatesDoctor> UserRatesDoctors { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //base.OnModelCreating(modelBuilder);
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();            
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            
+            /*Many-to-many DoctorSpecialty*/
+            modelBuilder.Entity<Doctor>()
+                .HasMany<Specialty>(s => s.Specialties)
+                .WithMany(d => d.Doctors)
+                .Map(ds => 
+                    {
+                        ds.MapLeftKey("DoctorID");
+                        ds.MapRightKey("SpecialtyID");
+                        ds.ToTable("DoctorSpecialty");
+                    });
+
+            /*Many-to-many DoctorConsultingRoom*/
+            modelBuilder.Entity<Doctor>()
+                .HasMany<ConsultingRoom>(cr => cr.ConsultingRooms)
+                .WithMany(d => d.Doctors)
+                .Map(dcr =>
+                {
+                    dcr.MapLeftKey("DoctorID");
+                    dcr.MapRightKey("ConsultingRoomID");
+                    dcr.ToTable("DoctorConsultingRoom");
+                });
         }
     }
 }

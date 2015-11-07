@@ -14,7 +14,7 @@ namespace Quiron_Medical
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<QuironContext>(new QuironContextInitializer());
+            //Database.SetInitializer<QuironContext>(new QuironContextInitializer());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

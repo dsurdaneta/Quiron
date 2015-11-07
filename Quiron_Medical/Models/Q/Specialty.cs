@@ -16,6 +16,8 @@ namespace Quiron_Medical.Models
         public String Name { get; set; }
         [Display(Name = "Descripción")]
         public String Description { get; set; }
+
+        public virtual List<Doctor> Doctors { get; set; }
         #endregion
 
         #region Construction
@@ -23,6 +25,6 @@ namespace Quiron_Medical.Models
         #endregion
 
         #region Methods
-        #endregion
+        #endregion        
     }
 }

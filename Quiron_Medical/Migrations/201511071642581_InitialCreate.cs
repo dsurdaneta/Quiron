@@ -19,7 +19,7 @@ namespace Quiron_Medical.Migrations
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.State", t => t.StateID, cascadeDelete: true)
                 .Index(t => t.StateID);
-            
+
             CreateTable(
                 "dbo.ConsultingRoom",
                 c => new
@@ -30,13 +30,13 @@ namespace Quiron_Medical.Migrations
                         Address = c.String(),
                         MainPhoneNumber = c.String(nullable: false),
                         MedicalCentreID = c.Long(nullable: false),
-                        Doctor_ID = c.Long(),
+                        //Doctor_ID = c.Long(),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.MedicalCentre", t => t.MedicalCentreID, cascadeDelete: true)
-                .ForeignKey("dbo.Doctor", t => t.Doctor_ID)
-                .Index(t => t.MedicalCentreID)
-                .Index(t => t.Doctor_ID);
+                //.ForeignKey("dbo.Doctor", t => t.Doctor_ID)
+                .Index(t => t.MedicalCentreID);
+                //.Index(t => t.Doctor_ID);
             
             CreateTable(
                 "dbo.MedicalCentre",

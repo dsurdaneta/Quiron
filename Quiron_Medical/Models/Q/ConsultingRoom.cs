@@ -27,6 +27,8 @@ namespace Quiron_Medical.Models
         [Required()]
         public long MedicalCentreID { get; set; }
         public virtual MedicalCentre MedicalCentre { get; set; }
+
+        public virtual List<Doctor> Doctors { get; set; }
         #endregion
 
         #region Construction
@@ -45,5 +47,6 @@ namespace Quiron_Medical.Models
             return context.ConsultingRooms.Where(x => x.MedicalCentreID == centreID).ToList();
         }
         #endregion
+
     }
 }

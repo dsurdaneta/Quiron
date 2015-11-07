@@ -176,6 +176,14 @@
     <Compile Include="Migrations\201511071642581_InitialCreate.Designer.cs">
       <DependentUpon>201511071642581_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511071822541_DoctorManyRelations.cs" />
+    <Compile Include="Migrations\201511071822541_DoctorManyRelations.Designer.cs">
+      <DependentUpon>201511071822541_DoctorManyRelations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511072214508_UserRatesDoctors.cs" />
+    <Compile Include="Migrations\201511072214508_UserRatesDoctors.Designer.cs">
+      <DependentUpon>201511072214508_UserRatesDoctors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -184,14 +192,13 @@
     <Compile Include="Models\Q\DAL\QuironContext.cs" />
     <Compile Include="Models\Q\DAL\QuironContextInitializer.cs" />
     <Compile Include="Models\Q\Doctor.cs" />
-    <Compile Include="Models\Q\DoctorConsultingRoom.cs" />
-    <Compile Include="Models\Q\DoctorSpecialty.cs" />
     <Compile Include="Models\Q\Geography\City.cs" />
     <Compile Include="Models\Q\Geography\Country.cs" />
     <Compile Include="Models\Q\Geography\State.cs" />
     <Compile Include="Models\Q\MedicalCentre.cs" />
     <Compile Include="Models\Q\MedicalCentreType.cs" />
     <Compile Include="Models\Q\Specialty.cs" />
+    <Compile Include="Models\Q\UserRatesDoctor.cs" />
     <Compile Include="Models\Q\Users\User.cs" />
     <Compile Include="Models\Q\Users\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -304,6 +311,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511071642581_InitialCreate.resx">
       <DependentUpon>201511071642581_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511071822541_DoctorManyRelations.resx">
+      <DependentUpon>201511071822541_DoctorManyRelations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511072214508_UserRatesDoctors.resx">
+      <DependentUpon>201511072214508_UserRatesDoctors.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
