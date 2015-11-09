@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -13,9 +14,11 @@ namespace Quiron_Medical.Models.Geography
         public long ID { get; set; }
         [Display(Name="Estado")]
         [Required()]
+        [Index("UK_State", 1, IsUnique = true)]
         public String Name { get; set; }
-        [Display(Name = "PaisID")]
         [Required()]
+        [Display(Name = "PaisID")]        
+        [Index("UK_State", 2, IsUnique = true)]
         public long CountryID { get; set; }
         
         public virtual List<City> Cities { get; set; }

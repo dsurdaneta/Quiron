@@ -22,6 +22,7 @@ namespace Quiron_Medical.Models
         [DataType(DataType.MultilineText)]
         [Display(Name = "Comentario")]
         public String Comment { get; set; }
+        [Required()]
         [DataType(DataType.DateTime)]
         [Display(Name="Fecha")]
         public DateTime Date { get; set; }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -11,10 +12,12 @@ namespace Quiron_Medical.Models.Users
     {
         public long ID { get; set; }
         [Required()]
+        [Index(IsUnique=true)]
         public String Code { get; set; }
         [Required()]
         public String FullName { get; set; }
         [Required()]
+        [Index(IsUnique = true)]
         [DataType(DataType.EmailAddress)]
         public String Email { get; set; }
         [DataType(DataType.Password)]
@@ -25,6 +28,7 @@ namespace Quiron_Medical.Models.Users
         public int Age { get; set; }
         [Required()]
         public long CityID { get; set; }
+        [Required()]
         public long UserRoleID { get; set; }
         
         public virtual City City { get; set; }

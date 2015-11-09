@@ -12,7 +12,7 @@ namespace Quiron_Medical.Models.DAL
         public QuironContext()
             : base("QuironContext")
         {
-
+            //DropCreateDatabaseAlways<QuironContext>();
         }
 
         /*Datos geograficos*/

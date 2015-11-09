@@ -61,88 +61,102 @@ namespace Quiron_Medical.Migrations
                 new Specialty { Name= "Cirugía General" }
             };
 
-            specialties.ForEach(s => context.Specialties.AddOrUpdate(s));
+            specialties.ForEach(s => context.Specialties.AddOrUpdate(x => x.Name, s));
             context.SaveChanges();
 
-            context.Countries.AddOrUpdate(new Country
+            var geographyData = new List<Country> 
             {
+                new Country {
                 Name = "Venezuela",
                 PhoneCode = "58",
                 Abbreviation = "VZLA",
                 States = new List<State>
-                {
-                   new State { 
-                       Name = "Carabobo",
-                       Cities = new List<City> 
+                    {
+                       new State { 
+                           Name = "Carabobo",
+                           Cities = new List<City> 
+                           {
+                               new City { Name="Valencia", PhoneCode="241" },
+                               new City { Name="Naguanagua", PhoneCode="241" },
+                               new City { Name="Guacara", PhoneCode="245" },
+                               new City { Name="San Diego", PhoneCode="241" },
+                               new City { Name="Puerto Cabello", PhoneCode="242" },
+                               new City { Name="Tocuyito", PhoneCode="241" },
+                               new City { Name="Bejuma", PhoneCode="249" },
+                               new City { Name="Los Guayos", PhoneCode="241" },
+                               new City { Name="Canoabo", PhoneCode="249" },
+                               new City { Name="Montalbán", PhoneCode="249" },
+                               new City { Name="Morón", PhoneCode="242" },
+                               new City { Name="Mariara", PhoneCode="243" },
+                               new City { Name="San Joaquin", PhoneCode="245" },
+                               new City { Name="Güigüe", PhoneCode="245" }
+                           }
+                       },
+                       new State 
                        {
-                           new City { Name="Valencia", PhoneCode="241" },
-                           new City { Name="Naguanagua", PhoneCode="241" },
-                           new City { Name="Guacara", PhoneCode="245" },
-                           new City { Name="San Diego", PhoneCode="241" },
-                           new City { Name="Puerto Cabello", PhoneCode="242" },
-                           new City { Name="Tocuyito", PhoneCode="241" },
-                           new City { Name="Bejuma", PhoneCode="249" },
-                           new City { Name="Los Guayos", PhoneCode="241" },
-                           new City { Name="Canoabo", PhoneCode="249" },
-                           new City { Name="Montalbán", PhoneCode="249" },
-                           new City { Name="Morón", PhoneCode="242" },
-                           new City { Name="Mariara", PhoneCode="243" },
-                           new City { Name="San Joaquin", PhoneCode="245" },
-                           new City { Name="Güigüe", PhoneCode="245" }
-                       }
-                   },
-                   new State 
-                   {
-                       Name = "Aragua",
-                       Cities = new List<City>
+                           Name = "Aragua",
+                           Cities = new List<City>
+                           {
+                               new City { Name="Maracay", PhoneCode="243" },
+                               new City { Name="Cagua", PhoneCode="244" },
+                               new City { Name="Turmero", PhoneCode="244" }
+                           }
+                       },
+                       new State 
                        {
-                           new City { Name="Maracay", PhoneCode="243" },
-                           new City { Name="Cagua", PhoneCode="244" },
-                           new City { Name="Turmero", PhoneCode="244" }
-                       }
-                   },
-                   new State 
-                   {
-                       Name = "Lara",
-                       Cities = new List<City>
+                           Name = "Lara",
+                           Cities = new List<City>
+                           {
+                               new City { Name = "Barquisimeto", PhoneCode= "251" },
+                               new City { Name = "Cabudare", PhoneCode= "251" },
+                               new City { Name = "Duaca", PhoneCode= "253" },
+                               new City { Name = "Quíbor", PhoneCode= "253" },
+                               new City { Name = "Carora", PhoneCode= "252" }
+                           }
+                       },
+                       new State 
                        {
-                           new City { Name = "Barquisimeto", PhoneCode= "251" },
-                           new City { Name = "Cabudare", PhoneCode= "251" },
-                           new City { Name = "Duaca", PhoneCode= "253" },
-                           new City { Name = "Quíbor", PhoneCode= "253" },
-                           new City { Name = "Carora", PhoneCode= "252" }
-                       }
-                   },
-                   new State 
-                   {
-                       Name = "Distrito Capital",
-                       Cities = new List<City>
+                           Name = "Distrito Capital",
+                           Cities = new List<City>
+                           {
+                               new City { Name = "Caracas", PhoneCode= "212" }
+                           }
+                       },
+                       new State 
                        {
-                           new City { Name = "Caracas", PhoneCode= "212" }
-                       }
-                   },
-                   new State 
-                   {
-                       Name = "Miranda",
-                       Cities = new List<City>
+                           Name = "Miranda",
+                           Cities = new List<City>
+                           {
+                               new City { Name = "Los Teques", PhoneCode= "212" },
+                               new City { Name = "Charallave", PhoneCode= "283" }
+                           }
+                       },
+                       new State 
                        {
-                           new City { Name = "Los Teques", PhoneCode= "212" },
-                           new City { Name = "Charallave", PhoneCode= "283" }
+                           Name = "Bolívar",
+                           Cities = new List<City>
+                           {
+                               new City { Name = "Ciudad Bolívar", PhoneCode= "285" },
+                               new City { Name = "Puerto Ordaz", PhoneCode= "286" },
+                               new City { Name = "San Félix", PhoneCode= "286" },
+                               new City { Name = "Upata", PhoneCode= "288" }
+                           }
                        }
-                   },
-                   new State 
-                   {
-                       Name = "Bolívar",
-                       Cities = new List<City>
-                       {
-                           new City { Name = "Ciudad Bolívar", PhoneCode= "285" },
-                           new City { Name = "Puerto Ordaz", PhoneCode= "286" },
-                           new City { Name = "San Félix", PhoneCode= "286" },
-                           new City { Name = "Upata", PhoneCode= "288" }
-                       }
-                   }
+                    }
                 }
-            });
+            };
+            foreach (Country country in geographyData)
+            {
+                foreach (State state in country.States)
+                {
+                    foreach(City city in state.Cities)
+                    {
+                        context.Cities.AddOrUpdate(x => x.Name, city);
+                    }
+                    context.States.AddOrUpdate(x => x.Name, state);
+                }
+                context.Countries.AddOrUpdate(x => x.Name, country);
+            }
             context.SaveChanges();
 
             var roles = new List<UserRole> 
@@ -153,22 +167,24 @@ namespace Quiron_Medical.Migrations
                 new UserRole{ Name="medical_centre", Description="Centro Médico" }
                 
             };
-            roles.ForEach(r => context.UserRoles.AddOrUpdate(r));
+            roles.ForEach(r => context.UserRoles.AddOrUpdate(x => x.Name, r));
             context.SaveChanges();
 
-            context.Users.AddOrUpdate(new User
+            var users = new List<User> 
             {
-                UserRoleID = 1,
-                Code = "admin",
-                Password = "admin",
-                FullName = "Administrador del Sistema Quirón",
-                CityID = 1,
-                BirthDate = DateTime.Now.AddYears(-25),
-                Email = "admin@quiron.test",
-                Age = 25
-            });
+                new User
+                {
+                    UserRoleID = 1,
+                    Code = "admin",
+                    Password = "admin",
+                    FullName = "Administrador del Sistema Quirón",
+                    CityID = 1,
+                    BirthDate = DateTime.Now.AddYears(-25),
+                    Email = "admin@quiron.test",
+                    Age = 25
+                }
+            };
             context.SaveChanges();
-
         }
     }
 }
