@@ -46,7 +46,7 @@
                 @Html.ValidationMessageFor(model => model.PostalCode, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        @*Editar para que seleccione Pais > Estado > Ciudad: *@
         <div class="form-group">
             @Html.LabelFor(model => model.CityID, "CityID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

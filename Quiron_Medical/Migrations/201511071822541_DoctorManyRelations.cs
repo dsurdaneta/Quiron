@@ -35,7 +35,7 @@ namespace Quiron_Medical.Migrations
                 .Index(t => t.DoctorID)
                 .Index(t => t.SpecialtyID);
             
-            DropColumn("dbo.ConsultingRoom", "Doctor_ID");
+            //DropColumn("dbo.ConsultingRoom", "Doctor_ID");
         }
         
         public override void Down()

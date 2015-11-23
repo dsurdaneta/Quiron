@@ -184,6 +184,14 @@
     <Compile Include="Migrations\201511072214508_UserRatesDoctors.Designer.cs">
       <DependentUpon>201511072214508_UserRatesDoctors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511090441411_FixtTry20151108.cs" />
+    <Compile Include="Migrations\201511090441411_FixtTry20151108.Designer.cs">
+      <DependentUpon>201511090441411_FixtTry20151108.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511231431132_TryUniqueKeysMaxStringLenght.cs" />
+    <Compile Include="Migrations\201511231431132_TryUniqueKeysMaxStringLenght.Designer.cs">
+      <DependentUpon>201511231431132_TryUniqueKeysMaxStringLenght.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -295,6 +303,8 @@
     <Content Include="Views\MedicalCentres\Details.cshtml" />
     <Content Include="Views\MedicalCentres\Edit.cshtml" />
     <Content Include="Views\MedicalCentres\Index.cshtml" />
+    <Content Include="Views\Countries\_GetCountries.cshtml" />
+    <Content Include="Views\Countries\_GetCountriesFullDDL.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -317,6 +327,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511072214508_UserRatesDoctors.resx">
       <DependentUpon>201511072214508_UserRatesDoctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511090441411_FixtTry20151108.resx">
+      <DependentUpon>201511090441411_FixtTry20151108.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511231431132_TryUniqueKeysMaxStringLenght.resx">
+      <DependentUpon>201511231431132_TryUniqueKeysMaxStringLenght.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

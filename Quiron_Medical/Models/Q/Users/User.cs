@@ -11,11 +11,13 @@ namespace Quiron_Medical.Models.Users
     public class User
     {
         public long ID { get; set; }
-        [Required()]
-        [Index(IsUnique=true)]
+        [StringLength(100)]
+        [Required()]        
+        //[Index(IsUnique=true)]
         public String Code { get; set; }
         [Required()]
         public String FullName { get; set; }
+        [StringLength(100)]
         [Required()]
         [Index(IsUnique = true)]
         [DataType(DataType.EmailAddress)]

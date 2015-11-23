@@ -11,8 +11,9 @@ namespace Quiron_Medical.Models.Users
     {
         public long ID { get; set; }
         [Required()]
+        [StringLength(450)]
         [Index(IsUnique = true)]
-        [Display(Name="Especialización")]
+        [Display(Name="Rol")]
         public String Name { get; set; }
         [Display(Name = "Descripción")]
         public String Description { get; set; }

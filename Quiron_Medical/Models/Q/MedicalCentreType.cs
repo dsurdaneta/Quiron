@@ -11,8 +11,9 @@ namespace Quiron_Medical.Models
     {
         #region Properties
         public long ID { get; set; }
-        [Display(Name="Tipo")]
         [Required()]
+        [Display(Name="Tipo")]
+        [StringLength(450)]
         [Index(IsUnique = true)]
         public String Name { get; set; }
         [Display(Name = "Descripción")]

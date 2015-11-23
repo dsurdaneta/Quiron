@@ -13,7 +13,8 @@ namespace Quiron_Medical.Models.Geography
         #region Properties
         public long ID { get; set; }
         [Required()]
-        [Index("UK_City",1,IsUnique = true)]
+        [StringLength(450)]
+        //[Index("UK_City",1,IsUnique = true)]
         [Display(Name = "Ciudad")]
         public String Name { get; set; }
         [StringLength(5)]
@@ -22,7 +23,7 @@ namespace Quiron_Medical.Models.Geography
         public String PhoneCode { get; set; }
 
         [Required()]
-        [Index("UK_City", 2, IsUnique = true)]
+        //[Index("UK_City", 2, IsUnique = true)]
         [Display(Name = "EstadoID")]
         public long StateID { get; set; }
         //public virtual State State { get; set; }

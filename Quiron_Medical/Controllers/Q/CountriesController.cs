@@ -116,6 +116,13 @@ namespace Quiron_Medical.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: Countries
+        [ChildActionOnly]
+        public PartialViewResult _GetCountries()
+        {
+            return PartialView("_GetCountries", db.Countries.ToList());
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

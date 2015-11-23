@@ -12,13 +12,14 @@ namespace Quiron_Medical.Models.Geography
     {
         #region Properties
         public long ID { get; set; }
-        [Display(Name="Estado")]
         [Required()]
-        [Index("UK_State", 1, IsUnique = true)]
+        [StringLength(450)]
+        [Display(Name = "Estado")]
+        //[Index("UK_State", 1, IsUnique = true)]
         public String Name { get; set; }
         [Required()]
         [Display(Name = "PaisID")]        
-        [Index("UK_State", 2, IsUnique = true)]
+        //[Index("UK_State", 2, IsUnique = true)]
         public long CountryID { get; set; }
         
         public virtual List<City> Cities { get; set; }

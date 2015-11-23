@@ -13,6 +13,7 @@ namespace Quiron_Medical.Models.DAL
             : base("QuironContext")
         {
             //DropCreateDatabaseAlways<QuironContext>();
+            //Database.SetInitializer<QuironContext>(new DropCreateDatabaseIfModelChanges<QuironContext>());
         }
 
         /*Datos geograficos*/
