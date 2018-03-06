@@ -36,7 +36,7 @@ namespace Quiron_Medical.Controllers
             return View(city);
         }
 
-        public ActionResult BackToCountry(long? StateID)
+        public ActionResult BackToState(long? StateID)
         {
             return Redirect("~/States/Details/" + StateID);
         }
