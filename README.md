@@ -3,4 +3,4 @@
 Doctor search and recommendation Project 
 
 [SP]
-Proyecto de busqueda y recomendacion de M�dicos
+Proyecto de búsqueda y recomendación de Médicos
